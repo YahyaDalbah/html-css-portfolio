@@ -10,11 +10,14 @@
 <body>
     <nav>
         <h1>YD</h1>
-        <!-- <div class='icon'>
-            <a href="#Home">Home</a>
-            <a href="#Projects">Projects</a>
-            <a href="#Contact">Contact</a>
-        </div> -->
+        <div class='icon-links'>
+            <div class="icon"><img src="./images/menu.png" alt=""></div>
+            <div class="slide-bottom hidden">
+                <a href="#Home">Home</a>
+                <a href="#Projects">Projects</a>
+                <a href="#Contact">Contact</a>
+            </div>
+        </div>
         <div class="links">
             <a href="#Home">Home</a>
             <a href="#Projects">Projects</a>
@@ -95,16 +98,39 @@
             </div>
         </section>
         <footer id="Contact">
-            <div>
+            <div class="form">
                 <h1>Contact me: </h1>
-                <input type="text" placeholder="your name">
-                <input type="text" placeholder="your email">
+                <div class="input-div">
+                    <input type="text" placeholder="your name">
+                    <input type="text" placeholder="your email">
+                </div>
                 <textarea name="" id="" cols="30" rows="10" placeholder="your message"></textarea>
                 <button>send</button>
+            </div>
+            <div class="social">
+                <div class="media">
+                    <div class='photo'>
+                        <img class='' src="images/email.png" alt="" />
+                    </div>
+                    <p><span>Email: </span><a href="mailto:yahya1dalbah@gmail.com">yahya1dalbah@gmail.com</a></p>
+                </div>
+                <div class="media">
+                    <div class='photo'>
+                        <img class='' src="images/phone.png" alt="" />
+                    </div>
+                    <p><span>Phone: </span>+972 598 265 323</p>
+                </div>
+                <div class="media">
+                    <div class='photo'>
+                        <img class='' src="images/location.png" alt="" />
+                    </div>
+                    <p><span>Location: </span>Tulkarm - denabah</p>
+                </div>
             </div>
         </footer>
     </main>
 
     <div class='line'></div>
+    <script src="script.js"></script>
 </body>
 </html>

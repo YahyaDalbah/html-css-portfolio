@@ -3,7 +3,8 @@
     --BLACK: #202020;
     --PURPLE: #5B38E3;
     --YELLOW: #F7D046;
-    --GRAY: rgb(156 163 175 / 1);
+    --GRAY: rgb(156 163 175);
+    --BLUE: rgb(96 165 250)
 }
 *{
     box-sizing: border-box;
@@ -36,7 +37,7 @@ nav a{
     text-decoration: none;
     color: var(--BLACK)
 }
-nav .icon{
+nav .icon-links{
     display: none;
 }
 
@@ -189,19 +190,30 @@ nav .icon{
 #Contact{
     padding-top: 15rem;
     padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#Contact div{
+#Contact .form{
     display: flex;
     flex-direction: column;
-    width: 40%;
-    margin: 10px 4rem;
+    width: 30%;
+    margin: 10px 6rem 10px 4rem;
     gap: 1rem 0rem;
+}
+#Contact .input-div{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 7px;
+}
+#Contact .input-div input {
+    width: 46%;
 }
 #Contact input, #Contact textarea{
     border: 1px solid #202020;
     outline: none;
-    padding: 0.25rem;
+    padding: 0.3rem;
     background-color: rgb(220, 223, 228);
     font-size: 16px;
 }
@@ -212,8 +224,8 @@ nav .icon{
 }
 
 #Contact button{
-    width: fit-content;
-    padding: 0.4rem 10rem;
+    width: 100%;
+    padding: 0.4rem 0;
     font-size: 18px;
     align-self: center;
     background-color: rgb(96 165 250);
@@ -223,9 +235,40 @@ nav .icon{
     box-shadow: 0 1px 4px black;
 }
 
+.photo img {
+    width: 40px;
+}
+
+#Contact .photo {
+    display: flex;
+    width: fit-content;
+    padding: 0.8rem;
+    border-radius: 9999px;
+    background-color: var(--BLUE);
+    margin-right: 16px;
+}
+
+#Contact a{
+    color: rgb(37 99 235);
+}
+
+.social{
+    height: 100%;
+}
+
+.media{
+    display: flex;
+    align-items: center;
+    margin: 2rem 2rem 0 0;
+}
+.media span{
+    color: var(--GRAY);
+}
+
+
 /* other */
 .line{
-    position: absolute;
+    position: fixed;
     border: 1px var(--YELLOW) solid;
     border-radius: 9999px;
     top: 100px;
@@ -234,6 +277,36 @@ nav .icon{
     height: 500px;
     z-index: -1;
 }
+
+.slide-bottom {
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+    }
+}
+
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+    }
+}
+
 @media screen and (max-width: 1080px) {
     #Home {
         flex-direction: column;
@@ -262,10 +335,70 @@ nav .icon{
         gap: 0;
         margin-inline: 0;
     }
-    
+    #Contact .input-div{
+        width: 100%;
+        flex-direction: column;
+        gap: 1.2rem 0;
+    }
+    #Contact .input-div input{
+        width: 100%;
+    }
 }
+
+@media screen and (max-width: 1000px) {
+    #Contact{
+        flex-direction: column;
+        
+    }
+    #Contact .form{
+        width: 50%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .projects{
         grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav .links{
+        display: none;
+    }
+    nav .icon-links{
+        display: block;
+        position: relative;
+    }
+    .slide-bottom{
+        position: absolute;
+        right: 0px;
+        top: -0.2rem;
+        min-width: 165px;
+        border: 1px solid rgb(196, 198, 201);
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 1.5rem;
+        padding: 12px 20px;
+    }
+    nav .icon img{
+        width: 34px;
+    }
+    nav .icon{
+        cursor: pointer;
+        font-size: 32px;
+        font-weight: 500;
+        
+    }
+    .hidden{
+        display: none;
+        background-color: rebeccapurple;
+    }
+    #Home .desc h1{
+        font-size: 56px;
+    }
+    #Contact .form {
+        width: 70%;
     }
 }
